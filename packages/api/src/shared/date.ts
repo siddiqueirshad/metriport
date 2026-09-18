@@ -47,7 +47,7 @@ export const secondsToISODateTime = (unixTime: number): string => {
  * filters don't get a 400.
  */
 export function parseISODate(date?: string): string | undefined {
-  if (!date) return date;
+  if (date === undefined) return date;
   const normalized = toIsoDate(date);
   if (!normalized) {
     throw new BadRequestError(`Date must be in format ${ISO_DATE} - got ${date}`);

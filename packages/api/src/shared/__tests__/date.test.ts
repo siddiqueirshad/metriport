@@ -17,5 +17,6 @@ describe("parseISODate", () => {
   it("throws BadRequestError for invalid dates", () => {
     expect(() => parseISODate("not-a-date")).toThrow(BadRequestError);
     expect(() => parseISODate("06/01/2024")).toThrow(BadRequestError);
+    expect(() => parseISODate("")).toThrow(BadRequestError);
   });
 });
